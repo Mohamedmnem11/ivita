@@ -22,16 +22,24 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## 🏷 Project Overview
 
-**iVita** is a modern React frontend application built with **Vite**, **Redux Toolkit**, and **Tailwind CSS**.
+iVita is a modern React frontend application built with Vite, Redux Toolkit , and Tailwind CSS
 
 
 
+Register → Verify OTP → Home
+Login → Verify WhatsApp → Home
+
+Home
+ ├─ Category → Products → Product → Cart
+ ├─ Search → Product
+ ├─ Cart → add / Remove
+ └─ Logout → Login
 
 ```
 
 ---
 
-## ⚙️ Features
+##  Features
 
 ### Authentication
 
@@ -42,14 +50,15 @@ If you are developing a production application, we recommend using TypeScript wi
 
   * Email OTP for registration.
   * WhatsApp OTP login & verification.
-* **Login**
+
+Login
 
   * Email/password login.
   * WhatsApp login via OTP.
 
 ### State Management
 
-* **Redux Toolkit**
+Redux Toolkit
 
   * `authSlice` handles authentication state.
   * `cartSlice` (if applicable) handles cart functionality.
@@ -118,9 +127,7 @@ npm run dev
 
 ## 🛠 Scripts
 
-| Command           | Description                      |
-| ----------------- | -------------------------------- |
-| `npm run dev`     | Start development server         ||
+npm run dev`     | Start development server        
 
 ---
 
@@ -134,10 +141,6 @@ npm run dev
 * **React Icons**: Icons for UI
 * **Vite**: Build tool
 
----
-
-## ⚠️ Notes
-
 
 * Configure API endpoints in `src/utils/axios.js`.
 * Tokens are stored in `localStorage` (`access_token` & `refresh_token`).
@@ -145,8 +148,3 @@ npm run dev
 
 ---
 
-## 📱 Screenshots (Optional)
-
-*(You can add screenshots here if needed)*
-
---
