@@ -7,7 +7,7 @@ import {
   FaPhone,
   FaLock,
 } from 'react-icons/fa';
-import InputWrapper from '../components/InputWrapper';
+import InputWrapper from '../components/Inputwrapper';
 
 import ivitaImg from '../assets/images/ivita.png';
 import { registerUser, setUserId, clearError } from '../redux/slices/authSlice';
@@ -17,7 +17,7 @@ const Register = () => {
   const navigate = useNavigate();
   const { loading, error, userId } = useSelector((state) => state.auth);
 
-  /* ================== STATE ================== */
+  
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -30,7 +30,7 @@ const Register = () => {
 
   const [formErrors, setFormErrors] = useState({});
 
-  /* ================== EFFECTS ================== */
+  
   useEffect(() => {
     dispatch(clearError());
   }, [dispatch]);
@@ -39,7 +39,7 @@ const Register = () => {
     if (userId) navigate('/verify');
   }, [userId, navigate]);
 
-  /* ================== VALIDATION ================== */
+  
   const validateField = (name, value) => {
     let error = '';
 
@@ -95,7 +95,6 @@ const Register = () => {
     return Object.keys(errors).length === 0;
   };
 
-  /* ================== HANDLERS ================== */
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const fieldValue = type === 'checkbox' ? checked : value;
@@ -132,7 +131,7 @@ const Register = () => {
     <div className="min-h-screen flex items-center justify-center bg-[var(--secondary-color)] px-4">
       <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-6 border border-[var(--color-primary)]">
 
-        {/* IMAGE */}
+       
         <div className="flex justify-center mb-4">
           <img src={ivitaImg} alt="Register" className="h-24" />
         </div>
@@ -146,7 +145,7 @@ const Register = () => {
 
         <form onSubmit={handleSubmit} className="space-y-4">
 
-          {/* First + Last */}
+         
           <div className="grid grid-cols-2 gap-3">
             <InputWrapper
               icon={FaUser}
@@ -206,7 +205,6 @@ const Register = () => {
             error={formErrors.confirm_password}
           />
 
-          {/* TERMS */}
           <div>
             <div className="flex items-center">
               <input
@@ -228,7 +226,7 @@ const Register = () => {
             )}
           </div>
 
-          {/* API ERROR */}
+        
           {error && (
             <div className="bg-red-50 p-2 rounded text-xs text-red-600">
               {error}
